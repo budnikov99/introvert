@@ -248,7 +248,7 @@ class YadroApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Introvert\Model\YadroUser[]',
+                'object',
                 '/yadro/users/list'
             );
 
