@@ -252,11 +252,11 @@ class YadroApi
                 '/yadro/users/list'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Introvert\Model\YadroUser[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Introvert\Model\YadroUser[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
