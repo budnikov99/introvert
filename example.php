@@ -2,7 +2,7 @@
 require_once(__DIR__ . '/autoload.php');
 
 // Configure API key authorization: api_key
-Introvert\Configuration::getDefaultConfiguration()->setApiKey('key', '');
+Introvert\Configuration::getDefaultConfiguration()->setApiKey('key', '23bc075b710da43f0ffb50ff9e889aed');
 
 $api = new Introvert\ApiClient();
 
@@ -34,11 +34,11 @@ try {
 
     // можно просто передать массив
     $newContact = [
-        'name' => 'Name3',
-        'phone' => '12345678903',
-        'crm_user_id' => '12345678903',
+        'name' => 'VOSEM VOSEMSOT PYAT PYAT PYAT TRI PYAT TRI PYAT',
+        'phone' => '78005553535',
+        'crm_user_id' => '42069',
         'custom_fields' => [
-            '123456' => 'value3'
+            'bistro' => 'dengi'
         ]
     ];
     $data = $api->contact->create($newContact);
