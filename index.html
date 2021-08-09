@@ -10,8 +10,9 @@
     <script src='/assets/script.js'></script>
 </head>
 <body>
-    <input id="apikey" class="api-form" type="text" value="23bc075b710da43f0ffb50ff9e889aed">
-    <form action="/api/tz1.php" class="api-form">
+    <input id="apikey" class="api-form" name="key" type="text" value="23bc075b710da43f0ffb50ff9e889aed">
+    <form method="get" action="/api/task1.php" class="api-form goto">
+        <span>Задание 1</span>
         <input type="date" name="datefrom" placeholder="Date from">
         <input type="date" name="dateto" placeholder="Date to">
         <input type="submit">
