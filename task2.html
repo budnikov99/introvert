@@ -76,13 +76,11 @@
                         let range = {from: lastDate, to: date};
                         lastDate = dateAddDays(new Date(date), 1);
                         dateAddDays(date, -1);
-                        console.log(range);
                         return range;
                     });
                     let endDate = dateAddDays(new Date(), MAX_BOOKING_DAYS);
                     
                     picker.options.selectableDateRange.push({from: lastDate, to: endDate});
-                    console.log(picker.options.selectableDateRange);
                     picker.render();
                 });
             }).submit();
