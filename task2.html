@@ -56,7 +56,7 @@
             var picker = $('#datepicker').glDatePicker({
                 cssName: 'flatwhite',
                 showAlways: true,
-                selectableDateRange: {},
+                selectableDateRange: [],
             }).glDatePicker(true);
 
             $('#update-params').submit((e) => {
@@ -81,6 +81,9 @@
                     let endDate = dateAddDays(new Date(), MAX_BOOKING_DAYS);
                     
                     picker.options.selectableDateRange.push({from: lastDate, to: endDate});
+                    picker.render();
+                }).fail((data) => {
+                    picker.options.selectableDateRange = [];
                     picker.render();
                 });
             }).submit();

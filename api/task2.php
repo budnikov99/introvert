@@ -68,14 +68,14 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
 
     $api = new Introvert\ApiClient();
 
-    $result = getBookingDatesCount($api, $bookField, $statuses, $today);
-    respondJson($result);
-
     try {
         $account = $api->account->info();
     } catch (\Throwable $th) {
         error(403, $th->getMessage());
     }
+
+    $result = getBookingDatesCount($api, $bookField, $statuses, $today);
+    respondJson($result);
     
 } else {
     error(405, 'Не поддерживается');
