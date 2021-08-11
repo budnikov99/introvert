@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Задание 5</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="/assets/jquery-3.6.0.js"></script>
+    <style>
+        html, body, .app-container {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .app-container {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-item {
+            display: block;
+            margin: 5px 0px;
+            width: 300px;
+            height: 30px;
+            font-size: 20px;
+            padding: 5px 20px;
+        }
+
+        .form-item.comment {
+            min-height: 60px;
+            resize: vertical;
+            max-height: 180px;
+        }
+
+        .form-item.label {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="form-container">
+            <form class="form" action="/api/task5/form1" method="post">
+                <span class="form-item label">Форма №1</span>
+                <input name="name" type="text" placeholder="Ваше имя..." class="form-item">
+                <input name="phone" type="tel" placeholder="Номер телефона..." class="form-item">
+                <input name="email" type="email" placeholder="E-mail адрес..." class="form-item">
+                <textarea name="comment" placeholder="Комментарий..." class="form-item comment"></textarea>
+                <input type="submit" class="form-item">
+            </form>
+        </div>
+        <div class="form-container">
+            <form class="form" action="/api/task5/form2" method="post">
+                <span class="form-item label">Форма №2</span>
+                <input name="name" type="text" placeholder="Ваше имя..." class="form-item">
+                <input name="phone" type="tel" placeholder="Номер телефона..." class="form-item">
+                <input name="email" type="email" placeholder="E-mail адрес..." class="form-item">
+                <textarea name="comment" placeholder="Комментарий..." class="form-item comment"></textarea>
+                <input type="submit" class="form-item">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
