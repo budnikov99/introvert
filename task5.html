@@ -51,7 +51,7 @@
 <body>
     <div class="app-container">
         <div class="form-container">
-            <form class="form" action="/api/task5/form1" method="post">
+            <form name="form1" id="form1" class="form" action="/api/task5/form1" method="post">
                 <span class="form-item label">Форма №1</span>
                 <input name="name" type="text" placeholder="Ваше имя..." class="form-item">
                 <input name="phone" type="tel" placeholder="Номер телефона..." class="form-item">
@@ -61,7 +61,7 @@
             </form>
         </div>
         <div class="form-container">
-            <form class="form" action="/api/task5/form2" method="post">
+            <form name="form2" id="form2" class="form" action="/api/task5/form2" method="post">
                 <span class="form-item label">Форма №2</span>
                 <input name="name" type="text" placeholder="Ваше имя..." class="form-item">
                 <input name="phone" type="tel" placeholder="Номер телефона..." class="form-item">
@@ -71,5 +71,27 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        function introvert_settings(II) {
+            //Чтобы точно не было интеграции через JS
+            II.settings.excludedForms.push('form1');
+            II.settings.excludedForms.push('form2');
+        }
+        (function(d, w, k) {
+            w.introvert_callback = function() {
+                try {
+                    w.II = new IntrovertIntegration(k);
+                } catch (e) {console.log(e)}
+            };
+        
+            var n = d.getElementsByTagName("script")[0],
+                e = d.createElement("script");
+        
+            e.type = "text/javascript";
+            e.async = true;
+            e.src = "https://api.yadrocrm.ru/js/cache/"+ k +".js";
+            n.parentNode.insertBefore(e, n);
+        })(document, window, '3363f0c5');
+    </script>
 </body>
 </html>
